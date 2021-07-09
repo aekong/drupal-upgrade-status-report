@@ -1,0 +1,1269 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'upgrade_status_html_export' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/upgrade_status/templates/upgrade-status-html-export.html.twig' -->
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"34d8c3c283",applicationID:"537440033"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+  <title>Upgrade status report</title>
+  <style>
+    body {
+      font-family: Helvetia, Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+    }
+    th, td {
+      border-bottom: 1px solid #cdcdcd;
+    }
+    th:nth-child(1), td:nth-child(3) {
+      width: 40%;
+    }
+    th:nth-child(2) {
+      width: 10%;
+    }
+    .list-description {
+      margin-bottom: 1em;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Upgrade Status report</h1>
+
+  <h2>Custom projects</h2>
+      <h3>sf.gov Moderation</h3>
+    
+    
+    
+    
+      <h3>sf.gov Departments</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">2 errors found. 6 warnings found.</div>
+    
+    <h3 class="upgrade-status-group">Fix now with automation</h3><div class="upgrade-status-description">Avoid some manual work by using <a href="https://www.drupal.org/project/rector">drupal-rector to fix issues automatically</a> or <a href="https://www.drupal.org/project/upgrade_rector">Upgrade Rector to generate patches</a>.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="rector-covered odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<strong><wbr>sfgov_departments.module</strong></td>
+                      <td>111</td>
+                      <td>Call to deprecated function <a target="_blank" href="https://api.drupal.org/api/drupal/8.9.x/search/drupal_set_message">drupal_set_message()</a>. Deprecated in drupal:8.5.0 and is removed from drupal:9.0.0. Use Drupal\<wbr>Core\<wbr>Messenger\<wbr>MessengerInterface::addMessage() instead.</td>
+                  </tr>
+                      <tr class="rector-covered even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>src/<strong><wbr>SFgovDepartment.php</strong></td>
+                      <td>137</td>
+                      <td>Call to deprecated method entityManager() of class Drupal. Deprecated in drupal:8.0.0 and is removed from drupal:9.0.0. Use Drupal::entityTypeManager() instead in most cases. If the needed method is not on \<wbr>Drupal\<wbr>Core\<wbr>Entity\<wbr>EntityTypeManagerInterface, see the deprecated \<wbr>Drupal\<wbr>Core\<wbr>Entity\<wbr>EntityManager to find the correct interface or service.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+<h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>src/<wbr>Plugin/<wbr>GroupContentEnabler/<strong><wbr>GroupMedia.php</strong></td>
+                      <td>66</td>
+                      <td>Call to deprecated method getTargetEntityPermissions() of class <a target="_blank" href="https://api.drupal.org/api/drupal/core!modules!group!src!Plugin!GroupContentEnablerBase.php/class/GroupContentEnablerBase/8.9.x">Drupal\<wbr>group\<wbr>Plugin\<wbr>GroupContentEnablerBase</a>. Deprecated in Group 1.0, will be removed before Group 2.0.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>tests/<wbr>Functional/<strong><wbr>SFgovDepartmentTest.php</strong></td>
+                      <td></td>
+                      <td>Class PHPUnit\<wbr>Framework\<wbr>TestCase not found.</td>
+                  </tr>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>tests/<wbr>Functional/<strong><wbr>SFgovDepartmentTest.php</strong></td>
+                      <td>19</td>
+                      <td>Class PHPUnit\<wbr>Framework\<wbr>TestCase not found.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>tests/<wbr>Kernel/<strong><wbr>GroupMediaAccessTest.php</strong></td>
+                      <td></td>
+                      <td>Class Drupal\<wbr>KernelTests\<wbr>KernelTestBase not found.</td>
+                  </tr>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<wbr>tests/<wbr>Kernel/<strong><wbr>GroupMediaAccessTest.php</strong></td>
+                      <td>17</td>
+                      <td>Class Drupal\<wbr>KernelTests\<wbr>KernelTestBase not found.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_departments/<strong><wbr>sfgov_departments.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Locations</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 error found. 4 warnings found.</div>
+    
+    <h3 class="upgrade-status-group">Fix now with automation</h3><div class="upgrade-status-description">Avoid some manual work by using <a href="https://www.drupal.org/project/rector">drupal-rector to fix issues automatically</a> or <a href="https://www.drupal.org/project/upgrade_rector">Upgrade Rector to generate patches</a>.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="rector-covered odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_locations/<strong><wbr>sfgov_locations.module</strong></td>
+                      <td>214</td>
+                      <td>Call to deprecated function <a target="_blank" href="https://api.drupal.org/api/drupal/8.9.x/search/drupal_set_message">drupal_set_message()</a>. Deprecated in drupal:8.5.0 and is removed from drupal:9.0.0. Use Drupal\<wbr>Core\<wbr>Messenger\<wbr>MessengerInterface::addMessage() instead.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+<h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_locations/<wbr>src/<wbr>Plugin/<wbr>Validation/<wbr>Constraint/<strong><wbr>AddressFormatConstraintBase.php</strong></td>
+                      <td>56</td>
+                      <td>Access to deprecated property $fields of class Drupal\<wbr>sfgov_locations\<wbr>Plugin\<wbr>Validation\<wbr>Constraint\<wbr>AddressFormatConstraintBase: Use $fieldOverrides instead.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_locations/<wbr>src/<wbr>Plugin/<wbr>Validation/<wbr>Constraint/<strong><wbr>AddressFormatConstraintBase.php</strong></td>
+                      <td>57</td>
+                      <td>Access to deprecated property $fields of class Drupal\<wbr>sfgov_locations\<wbr>Plugin\<wbr>Validation\<wbr>Constraint\<wbr>AddressFormatConstraintBase: Use $fieldOverrides instead.</td>
+                  </tr>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_locations/<wbr>src/<wbr>Plugin/<wbr>Validation/<wbr>Constraint/<strong><wbr>AddressFormatConstraintValidator.php</strong></td>
+                      <td>168</td>
+                      <td>Fetching class constant FULL of deprecated class CommerceGuys\<wbr>Addressing\<wbr>Subdivision\<wbr>PatternType: since commerceguys/addressing 1.1.0.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_locations/<strong><wbr>sfgov_locations.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>sf.gov About</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:01.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_about/<strong><wbr>sfgov_about.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Administration</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:01.</div>
+    <div class="list-description">2 warnings found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<strong><wbr>PHPStan failed</strong></td>
+                      <td>0</td>
+                      <td><h6>PHPStan command failed:</h6> <p>/code/vendor/bin/phpstan analyse --error-format=json -c /tmp/upgrade_status/deprecation_testing.neon /code/web/modules/custom/sfgov_admin 2&gt; /tmp/upgrade_status/phpstan_error_output</p> <h6>Command output:</h6> <p>Empty.</p> <h6>Command error:</h6> <p>Fatal error: Cannot redeclare Drupal\<wbr>paragraphs\<wbr>Plugin\<wbr>Field\<wbr>FieldWidget\<wbr>t() (previously declared in /code/web/modules/custom/sfgov_admin/tests/src/Unit/Plugin/Field/FieldWidget/SfgovParagraphsWidgetTest.php:8) in /code/web/modules/custom/sfgov_admin/tests/src/Unit/Plugin/Field/FieldWidget/SfgovParagraphsWidgetTest.php on line 10</p></td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_admin/<strong><wbr>sfgov_admin.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF.Gov Alerts</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:01.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_alerts/<strong><wbr>sfgov_alerts.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Campaigns</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_campaigns/<strong><wbr>sfgov_campaigns.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>Design system integration testing module</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_design_system/<strong><wbr>sfgov_design_system.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Event Subscriber</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_event_subscriber/<strong><wbr>sfgov_event_subscriber.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF.Gov Form.io</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_formio/<strong><wbr>sfgov_formio.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Image Attributes</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_image_attributes/<strong><wbr>sfgov_image_attributes.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Media</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">2 warnings found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_media/<wbr>tests/<wbr>src/<wbr>Functional/<strong><wbr>PowerBiEmbedFormatterTest.php</strong></td>
+                      <td></td>
+                      <td>Class Drupal\<wbr>Tests\<wbr>BrowserTestBase not found.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_media/<wbr>tests/<wbr>src/<wbr>Functional/<strong><wbr>PowerBiEmbedFormatterTest.php</strong></td>
+                      <td>14</td>
+                      <td>Class Drupal\<wbr>Tests\<wbr>BrowserTestBase not found.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov News</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_news/<strong><wbr>sfgov_news.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>sfgov_public_bodies</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_public_bodies/<strong><wbr>sfgov_public_bodies.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SFGov QLess Integration</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:02.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_qless/<strong><wbr>sfgov_qless.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Search</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:03.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_search/<strong><wbr>sfgov_search.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Utlities</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:03.</div>
+    <div class="list-description">4 warnings found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_utilities/<wbr>tests/<wbr>src/<wbr>Kernel/<strong><wbr>UtilityTest.php</strong></td>
+                      <td></td>
+                      <td>Class Drupal\<wbr>KernelTests\<wbr>KernelTestBase not found.</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_utilities/<wbr>tests/<wbr>src/<wbr>Kernel/<strong><wbr>UtilityTest.php</strong></td>
+                      <td>10</td>
+                      <td>Class Drupal\<wbr>KernelTests\<wbr>KernelTestBase not found.</td>
+                  </tr>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_utilities/<strong><wbr>sfgov_utilities.libraries.yml</strong></td>
+                      <td>0</td>
+                      <td>The 'services' library is depending on a deprecated library. The "core/jquery.ui.accordion" asset library is deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. See https://www.drupal.org/node/3067969</td>
+                  </tr>
+                      <tr class="known-warnings even">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_utilities/<strong><wbr>sfgov_utilities.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SFGov Get Vaccinated</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:03.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_vaccine/<strong><wbr>sfgov_vaccine.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Video</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:03.</div>
+    <div class="list-description">1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>modules/<wbr>custom/<wbr>sfgov_video/<strong><wbr>sfgov_video.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SFGOV PL</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:03.</div>
+    <div class="list-description">3 errors found. 1 warning found.</div>
+    
+    <h3 class="upgrade-status-group">Fix now manually</h3><div class="upgrade-status-description">It does not seem like these are covered by automation yet. <a href="https://www.drupal.org/project/rector">Contribute to drupal-rector to provide coverage</a>. Fix manually in the meantime.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-errors odd">
+                      <td class="status-info">web/<wbr>themes/<wbr>custom/<wbr>sfgovpl/<wbr>includes/<strong><wbr>node.inc</strong></td>
+                      <td>106</td>
+                      <td>Call to deprecated function <a target="_blank" href="https://api.drupal.org/api/drupal/8.9.x/search/drupal_get_user_timezone">drupal_get_user_timezone()</a>. Deprecated in drupal:8.8.0 and is removed from drupal:9.0.0. Use date_default_timezone_get() instead.</td>
+                  </tr>
+                      <tr class="known-errors even">
+                      <td class="status-info">web/<wbr>themes/<wbr>custom/<wbr>sfgovpl/<wbr>includes/<strong><wbr>node.inc</strong></td>
+                      <td>660</td>
+                      <td>Call to deprecated function <a target="_blank" href="https://api.drupal.org/api/drupal/8.9.x/search/entity_load_multiple_by_properties">entity_load_multiple_by_properties()</a>. Deprecated in drupal:8.0.0 and is removed from drupal:9.0.0. Use the entity type storage's loadByProperties() method.</td>
+                  </tr>
+                      <tr class="known-errors odd">
+                      <td class="status-info">web/<wbr>themes/<wbr>custom/<wbr>sfgovpl/<wbr>includes/<strong><wbr>node.inc</strong></td>
+                      <td>666</td>
+                      <td>Call to deprecated function <a target="_blank" href="https://api.drupal.org/api/drupal/8.9.x/search/entity_view">entity_view()</a>. Deprecated in drupal:8.0.0 and is removed from drupal:9.0.0. Use the entity view builder's view() method for creating a render array:</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+<h3 class="upgrade-status-group">Check manually</h3><div class="upgrade-status-description">Errors without Drupal source version numbers including parse errors and use of APIs from dependencies.</div>
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'table' -->
+<!-- BEGIN OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+<table class="upgrade-status-error-list responsive-enabled" data-striping="1">
+  
+  
+      <thead>
+      <tr>
+                            <th>File name</th>
+                            <th>Line</th>
+                            <th>Error</th>
+              </tr>
+    </thead>
+  
+      <tbody>
+                      <tr class="known-warnings odd">
+                      <td class="status-info">web/<wbr>themes/<wbr>custom/<wbr>sfgovpl/<strong><wbr>sfgovpl.info.yml</strong></td>
+                      <td>0</td>
+                      <td>Add <code>core_version_requirement: ^8 || ^9</code> to designate that the module is compatible with Drupal 9. See <a href="https://drupal.org/node/3070687">https://drupal.org/node/3070687<a>.</td>
+                  </tr>
+          </tbody>
+    </table>
+
+<!-- END OUTPUT from 'core/themes/seven/templates/classy/dataset/table.html.twig' -->
+
+
+      <h3>SF Gov Amplitude 1</h3>
+    <div class="list-description">Scanned on Fri, 07/09/2021 - 00:01.</div>
+    
+    
+    
+  
+  <h2>Contributed projects</h2>
+      <h3>Autodrop 8.x-1.0-alpha1</h3>
+    
+    
+    
+    
+      <h3>Configuration Exclude</h3>
+    
+    
+    
+    
+      <h3>Twig VarDumper 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Configuration installer 8.x-1.8</h3>
+    
+    
+    
+    
+      <h3>Component Libraries 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>GTranslate 8.x-1.13</h3>
+    
+    
+    
+    
+      <h3>Solr search 8.x-1.7</h3>
+    
+    
+    
+    
+      <h3>Lionbridge Content API Translator 8.x-2.4</h3>
+    
+    
+    
+    
+      <h3>Search API Pantheon 8.x-1.0</h3>
+    
+    
+    
+    
+      <h3>User Email Textformat 8.x-1.5</h3>
+    
+    
+    
+    
+      <h3>Address 8.x-1.9</h3>
+    
+    
+    
+    
+      <h3>Admin Toolbar 8.x-2.4</h3>
+    
+    
+    
+    
+      <h3>Adminimal Admin Toolbar 8.x-1.11</h3>
+    
+    
+    
+    
+      <h3>Advanced CSS/JS Aggregation 8.x-4.1</h3>
+    
+    
+    
+    
+      <h3>Allowed Formats 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Amplitude 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Anonymous Redirect 8.x-2.2-rc1</h3>
+    
+    
+    
+    
+      <h3>Block Field 8.x-1.0-rc2</h3>
+    
+    
+    
+    
+      <h3>Bulk Update Fields 8.x-2.0-alpha4</h3>
+    
+    
+    
+    
+      <h3>Cache Control Override 8.x-1.0-alpha2</h3>
+    
+    
+    
+    
+      <h3>Corresponding Entity References 8.x-4.0-alpha3</h3>
+    
+    
+    
+    
+      <h3>Color Field 8.x-2.4</h3>
+    
+    
+    
+    
+      <h3>Config Direct Save 8.x-2.1</h3>
+    
+    
+    
+    
+      <h3>Config Filter 8.x-1.8</h3>
+    
+    
+    
+    
+      <h3>Config Ignore 8.x-2.3</h3>
+    
+    
+    
+    
+      <h3>Configuration Split 8.x-1.7</h3>
+    
+    
+    
+    
+      <h3>Content Lock 8.x-2.2</h3>
+    
+    
+    
+    
+      <h3>Chaos Tools 8.x-3.7</h3>
+    
+    
+    
+    
+      <h3>Date Popup 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>Diff 8.x-1.0</h3>
+    
+    
+    
+    
+      <h3>Entity Construction Kit</h3>
+    
+    
+    
+    
+      <h3>Entity 8.x-1.2</h3>
+    
+    
+    
+    
+      <h3>Entity Browser 8.x-2.6</h3>
+    
+    
+    
+    
+      <h3>Entity Reference Revisions 8.x-1.9</h3>
+    
+    
+    
+    
+      <h3>EXIF Orientation 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>External Authentication 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>External Links 8.x-1.6</h3>
+    
+    
+    
+    
+      <h3>Fancy File Delete 2.0.3</h3>
+    
+    
+    
+    
+      <h3>Field Group 8.x-3.1</h3>
+    
+    
+    
+    
+      <h3>File Delete 8.x-1.0</h3>
+    
+    
+    
+    
+      <h3>Fixed Block Content 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>Google Analytics Reports 8.x-3.0-rc3</h3>
+    
+    
+    
+    
+      <h3>Google Tag Manager 8.x-1.4</h3>
+    
+    
+    
+    
+      <h3>Group 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Inline Entity Form 8.x-1.0-rc9</h3>
+    
+    
+    
+    
+      <h3>Job Scheduler 8.x-3.1</h3>
+    
+    
+    
+    
+      <h3>Linkit 8.x-5.0-beta12</h3>
+    
+    
+    
+    
+      <h3>Mail System 8.x-4.3</h3>
+    
+    
+    
+    
+      <h3>Maxlength</h3>
+    
+    
+    
+    
+      <h3>Media Entity File Replace 8.x-1.0</h3>
+    
+    
+    
+    
+      <h3>Media Revisions UI 2.0.0</h3>
+    
+    
+    
+    
+      <h3>Metatag 8.x-1.16</h3>
+    
+    
+    
+    
+      <h3>Mime Mail 8.x-1.0-alpha3</h3>
+    
+    
+    
+    
+      <h3>Multiple Fields Remove Button 8.x-1.0-alpha13</h3>
+    
+    
+    
+    
+      <h3>Node Edit Protection</h3>
+    
+    
+    
+    
+      <h3>Office Hours 8.x-1.5</h3>
+    
+    
+    
+    
+      <h3>Pantheon Advanced Page Cache 8.x-1.2</h3>
+    
+    
+    
+    
+      <h3>Paragraphs 8.x-1.12</h3>
+    
+    
+    
+    
+      <h3>Pathauto 8.x-1.8</h3>
+    
+    
+    
+    
+      <h3>Permission Filter 8.x-1.2</h3>
+    
+    
+    
+    
+      <h3>Protected Pages 8.x-1.4</h3>
+    
+    
+    
+    
+      <h3>Public Preview 8.x-1.0-beta2</h3>
+    
+    
+    
+    
+      <h3>Quick Node Clone 8.x-1.14</h3>
+    
+    
+    
+    
+      <h3>Redirect 8.x-1.6</h3>
+    
+    
+    
+    
+      <h3>REST Views 2.0.0</h3>
+    
+    
+    
+    
+      <h3>REST UI 8.x-1.20</h3>
+    
+    
+    
+    
+      <h3>Role Delegation 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>Scheduler 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Scheduler Content Moderation Integration 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Search API 8.x-1.19</h3>
+    
+    
+    
+    
+      <h3>SendGrid Integration 8.x-1.7</h3>
+    
+    
+    
+    
+      <h3>Simple Block 8.x-1.2</h3>
+    
+    
+    
+    
+      <h3>Simple Google Maps 3.0.1</h3>
+    
+    
+    
+    
+      <h3>Simple Instagram Feed 8.x-3.11</h3>
+    
+    
+    
+    
+      <h3>Simple XML Sitemap 8.x-3.10</h3>
+    
+    
+    
+    
+      <h3>SimpleSAMLphp Authentication 8.x-3.2</h3>
+    
+    
+    
+    
+      <h3>Smart Trim 8.x-1.3</h3>
+    
+    
+    
+    
+      <h3>Sub-pathauto 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>Telephone Formatter 8.x-1.1</h3>
+    
+    
+    
+    
+      <h3>Telephone Validation 8.x-2.3</h3>
+    
+    
+    
+    
+      <h3>Translation Management Core 8.x-1.12</h3>
+    
+    
+    
+    
+      <h3>Token 8.x-1.9</h3>
+    
+    
+    
+    
+      <h3>Twig Tweak 8.x-2.9</h3>
+    
+    
+    
+    
+      <h3>VariationCache 8.x-1.0</h3>
+    
+    
+    
+    
+      <h3>Video Embed Field 8.x-2.4</h3>
+    
+    
+    
+    
+      <h3>Viewfield 8.x-3.0-beta6</h3>
+    
+    
+    
+    
+      <h3>Views Bulk Operations 8.x-3.13</h3>
+    
+    
+    
+    
+      <h3>Views Conditional 8.x-1.4</h3>
+    
+    
+    
+    
+      <h3>Views Infinite Scroll 8.x-1.8</h3>
+    
+    
+    
+    
+  
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"34d8c3c283","applicationID":"537440033","transactionName":"b1RRMBQHW0IAU0FbDVYecgcSD1pfTnRHRxJZXW8nCRRQbSJfW0YQV11fARQ6fUUMXHNdEFVyXAoSFFpdDVVHH1xfVEcnCQhBVA9EZ1cRTV1H","queueTime":0,"applicationTime":1602,"atts":"QxNSRlwdSEw=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- END OUTPUT from 'modules/contrib/upgrade_status/templates/upgrade-status-html-export.html.twig' -->
+
